@@ -1,0 +1,97 @@
+package MODEL;
+
+import java.util.ArrayList;
+
+public class belanja {
+    private String NamaBarang;
+    private int HargaBarang;
+    private int jumlahBarang;
+
+    public String getNamaBarang() {
+        return NamaBarang;
+    }
+
+    public void setNamaBarang(String namaBarang) {
+        NamaBarang = namaBarang;
+    }
+
+    public int getHargaBarang() {
+        return HargaBarang;
+    }
+
+    public void setHargaBarang(int hargaBarang) {
+        HargaBarang = hargaBarang;
+    }
+
+    public int getJumlahBarang() {
+        return jumlahBarang;
+    }
+
+    public void setJumlahBarang(int jumlahBarang) {
+        this.jumlahBarang = jumlahBarang;
+    }
+
+    public int getTotalBelanja() {
+        return TotalBelanja;
+    }
+
+    public void setTotalBelanja(int totalBelanja) {
+        TotalBelanja = totalBelanja;
+    }
+
+    private int TotalBelanja;
+
+
+    public belanja(){
+
+    }
+
+    public belanja(String namaBarang, int hargaBarang, int jumlahBarang, int totalBelanja) {
+        this.NamaBarang = namaBarang;
+        this.HargaBarang = hargaBarang;
+        this.jumlahBarang = jumlahBarang;
+        this.TotalBelanja = totalBelanja;
+    }
+
+
+    public void setBill (ArrayList<belanja> bill) {
+        System.out.println(this.getNamaBarang());
+        System.out.println(this.getHargaBarang());
+        System.out.println(this.getJumlahBarang());
+        System.out.println(this.getTotalBelanja());
+
+
+    }
+}
+
+
+
+//class cetakinvoice//
+package MODEL;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class cetakinvoice {
+
+    public static void main(String[] args) {
+        int jum = 4;
+        ArrayList<belanja> p = new ArrayList<>();
+        for (int index = 0; index < jum; index++) {
+            belanja s = new belanja();
+            Scanner sc = new Scanner(System.in);
+            System.out.println("type item name = ");
+            s.setNamaBarang(sc.nextLine());
+            System.out.println("type item price = ");
+            s.setHargaBarang(sc.nextInt());
+            System.out.println("type item QTY = ");
+            s.setJumlahBarang(sc.nextInt());
+            p.add(s);
+            System.out.println(s.getNamaBarang() +  (s.getHargaBarang()* s.getJumlahBarang()));
+
+        }
+        System.out.println("--------------------------------------");
+        System.out.format("total belanja :%60s" , new belanja());
+
+    }
+}
